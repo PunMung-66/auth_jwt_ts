@@ -1,0 +1,50 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# TypeScript cache and artifacts
+*.tsbuildinfo
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ESLint cache
+.eslintcache
+
+# Optional: coverage reports if using Jest or other testing tools
+coverage/
+*.lcov
+
+# Optional: npm package lock files if using a different package manager
+# (usually only commit one lock file)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.bak
+*.old

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Modern JS for Node 18+
+    "module": "NodeNext", // ESM support
+    "moduleResolution": "NodeNext",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "declaration": true, // generates type definitions for production
+    "sourceMap": false, // turn on if you need debugging in prod
+    "removeComments": true, // optional: remove comments in build
+    "noEmitOnError": true, // prevents emitting JS on TS errors
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
