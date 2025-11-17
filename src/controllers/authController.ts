@@ -71,3 +71,33 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     res.status(500).send("Internal Server Error");
   }
 };
+
+export const googleCallback = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const user = (req.user as any) || null;
+
+    if (!user) {
+      res.status(401).send("Authentication failed");
+      return;
+    }
+
+    const token = jwt.sign(
+      { user_id: user._id, email: user.email },
+      process.env.TOKEN_KEY as string,
+      {
+        expiresIn: "2h",
+      }
+    );
+
+    const responseUser: UserType = user.toObject();
+    responseUser.token = token;
+
+    res.status(200).json(responseUser);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
